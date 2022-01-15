@@ -1,10 +1,12 @@
-const fs = require('fs');
-// import * as fs from 'fs';
+/* const name = require('./utils.js')
 
-fs.writeFileSync('notes.txt', 'Simple text file.');
-try {
-    fs.appendFileSync('notes.txt', '\tText to append');
-    console.log('The "data to append" was appended to file!');
-} catch (err) {
-    console.error("There was an error")
-}
+    console.log( name ); 
+*/
+
+/* const add = require('./utils')
+const sum = add(4,-2);
+console.log( sum ); */
+
+/* const notes = require('./notes.js')
+const note = notes();
+console.log( note ); */
