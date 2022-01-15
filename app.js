@@ -10,3 +10,12 @@ console.log( sum ); */
 /* const notes = require('./notes.js')
 const note = notes();
 console.log( note ); */
+
+const notes = require('./notes.js');
+const validator = require('validator');
+
+const note = notes();
+
+console.log( note );
+console.log( validator.isURL('tusker@gmail') );
+console.log( validator.isEmail('tusker@gwcp.com') );
