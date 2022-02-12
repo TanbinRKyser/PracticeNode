@@ -20,9 +20,85 @@ console.log( note );
 console.log( validator.isURL('tusker@gmail') );
 console.log( validator.isEmail('tusker@gwcp.com') ); */
 
-const chalk = require('chalk');
+/* const chalk = require('chalk');
 
 const greenMessage = chalk.green.inverse.bold('Success!');
+// const greenMessage = chalk.bold('Hello world');
 console.log( greenMessage );
 // console.log( chalk.bold( greenMessage ));
-// console.log( chalk.inverse( greenMessage ));
+// console.log( chalk.inverse( greenMessage )); */
+
+
+const notes = require('./notes.js');
+const yargs = require('yargs');
+const chalk = require('chalk');
+
+// console.log( process.argv );
+// console.log( yargs.argv );
+
+// const command = process.argv[2];
+
+/* if( command === 'add'){
+    console.log('Adding Note');
+} else if( command === 'remove' ){
+    console.log('Removing Note');
+} */
+
+// custom yarg version
+yargs.version('1.0.1');
+
+// create add command
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    builder:{
+        title:{
+            describe: "Note Title",
+            demandOption: true,
+            type: 'string'
+        },
+        body:{
+            describe:'Note Content',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function( argv ){
+        // console.log('Adding a new note', argv );
+        console.log('Title: ', argv.title );
+        console.log(' - ', argv.body );
+    }
+})
+
+// create remove command
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a new note',
+    handler: function(){
+        console.log('Removing a note');
+    }
+})
+
+// create list command
+yargs.command({
+    command: 'list',
+    describe: 'List of notes',
+    handler: function(){
+        console.log('List of notes');
+    }
+})
+
+// create read command
+yargs.command({
+    command: 'read',
+    describe: 'Reading a note',
+    handler: function(){
+        console.log('Reading a note');
+    }
+})
+
+// add, remove, read, list
+
+
+// console.log( yargs.argv );
+yargs.parse();
