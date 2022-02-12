@@ -11,11 +11,18 @@ console.log( sum ); */
 const note = notes();
 console.log( note ); */
 
-const notes = require('./notes.js');
+/* const notes = require('./notes.js');
 const validator = require('validator');
 
 const note = notes();
 
 console.log( note );
 console.log( validator.isURL('tusker@gmail') );
-console.log( validator.isEmail('tusker@gwcp.com') );
+console.log( validator.isEmail('tusker@gwcp.com') ); */
+
+const chalk = require('chalk');
+
+const greenMessage = chalk.green.inverse.bold('Success!');
+console.log( greenMessage );
+// console.log( chalk.bold( greenMessage ));
+// console.log( chalk.inverse( greenMessage ));
