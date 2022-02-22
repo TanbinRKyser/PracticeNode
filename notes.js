@@ -17,7 +17,7 @@ const addNote = ( title, body ) => {
             title: title,
             body: body
         });
-        
+
         console.log( chalk.green.inverse('New note added') );
     } else {
         console.log( chalk.red.inverse('Note title exist') );
@@ -43,6 +43,15 @@ const removeNote = ( title ) => {
 
 }
 
+const listNotes = () => {
+
+    console.log( chalk.inverse('List of notes') );
+
+    const notes = loadNotes();
+
+    notes.forEach( note  => console.log( note.title ) );
+}
+
 const saveNotes =( notes ) => {
 
     const notesJson = JSON.stringify( notes )
@@ -65,6 +74,7 @@ const loadNotes = () => {
 module.exports = {
     getNotes : getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }
 
