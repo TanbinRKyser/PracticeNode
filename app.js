@@ -65,8 +65,9 @@ yargs.command({
     },
     handler: function( argv ){
         // console.log('Adding a new note', argv );
-        console.log('Title: ', argv.title );
-        console.log(' - ', argv.body );
+        // console.log('Title: ', argv.title );
+        // console.log(' - ', argv.body );
+        notes.addNote( argv.title, argv.body );
     }
 })
 
@@ -96,8 +97,6 @@ yargs.command({
         console.log('Reading a note');
     }
 })
-
-// add, remove, read, list
 
 
 // console.log( yargs.argv );
